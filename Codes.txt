@@ -1,0 +1,91 @@
+import matplotlib.pyplot as plt
+import numpy as np
+
+datos = [3,5,2,8,1,4,3,5,6,6,8]
+variables = ["Juan", "Carlos", "Samwel", "federico", "Juancho", "Fausto"]
+datos_x = [3,5,2,6,1,7]
+datos_y = [4,7,5,2,1,7]
+
+plt.figure(figsize=(8,5))
+plt.suptitle("Gráfica de funciones", fontsize="20")
+x = np.arange(1,10,0.1)
+
+# Gráfica 1
+y1 = np.sin(x**2)
+plt.subplot(2,3,1)
+plt.plot(x,y1, color="Blue", marker="p" )
+plt.title("Función seno")
+
+#Grafica #2
+plt.subplot(2,3,2)
+plt.pie(datos_x,labels=variables)
+plt.title("Torta")
+
+
+y3 = np.tan(2*x)
+plt.subplot(2,3,3)
+plt.plot(x,y3,color="green", marker="p")
+plt.title("Función tangente")
+
+
+y4 = np.arccosh(x)
+plt.subplot(2,3,5)
+plt.plot(x,y4,marker="o")
+plt.title("Función arcoseno hiperbólico")
+
+
+# Los histogramas evaluan la repetividad de un dato
+plt.subplot(2,3,4)
+plt.hist(datos,orientation='horizontal',color = "skyblue", edgecolor="black")
+plt.title("Histograma")
+
+
+#Los gráficos tipo barras deben tener valores equitativos
+plt.subplot(2,3,6)
+plt.bar(datos_x,datos_y)
+plt.title("Barras")
+
+plt.tight_layout()
+plt.show()
+
+
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+#Configuración gráfica
+plt.figure(figsize=(8,5))
+plt.suptitle("Graficación", fontsize= 25)
+
+#Graficación
+# Gráfica 1
+x = np.arange(1,10,0.1)
+y1 = np.sin(x)
+y2 = np.cos(x)
+plt.subplot(3,4,1)
+plt.plot(y1, label = "Seno", color = "skyblue", marker = "p")
+plt.plot(y2, label = "Coseno", color = "red", marker = "o")
+#plt.xlabel("Distancia")
+#plt.ylabel("Tiempo")
+plt.title("Funciones trigonométricas")
+#plt.legend()
+
+#Gráfica #2
+datos_hist = [2,4,6,4,7,5,6,4,8,6,3]
+plt.subplot(3,4,4)
+plt.hist(datos_hist, orientation="horizontal", color = "green", edgecolor= "black")
+plt.title("Histograma")
+
+#Grafica #3
+dic = {"Pedro" : 4, "Juanito":2, "Tomas":7,"Federico": 5}
+plt.subplot(3,4,9)
+plt.pie(list(dic.values()), labels=list(dic.keys()), startangle=90)
+plt.title("Pacticipación")
+
+#Grafica #4
+plt.subplot(3,4,12)
+plt.bar(list(dic.keys()),list(dic.values()))
+plt.title("Barras")
+
+plt.tight_layout()
+plt.show()
