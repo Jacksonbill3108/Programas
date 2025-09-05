@@ -1,3 +1,4 @@
+
 lista = []
 print("[x1,y1,x2,y2]")
 for i in range(4):
