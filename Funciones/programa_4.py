@@ -11,7 +11,9 @@ def circulo(a):
     print("La figura seleccionada es: Circulo\n Con radio = ", a, "\n El area es: ", 3.1416 * a**2, "\n El perimetro es: ", 2*3.1416*a)
     menu()
 
-def cuadrado():
+def cuadrado(b):
+    print("La figura seleccionada es: cuadrado\n con longitud = ",b,"\n El area es: ",b**2,"\n El perimetro es:",b*4)
+    menu()
     pass
 
 
@@ -23,8 +25,8 @@ def menu():
         a = dato(op)
         circulo(a)
     elif op == 2:
-        dato(op)
-        cuadrado(a)
+        b=dato(op)
+        cuadrado(b)
     elif op == 3:
         exit()
     else:
